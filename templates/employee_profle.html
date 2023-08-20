@@ -1,0 +1,91 @@
+{% extends "base.html" %} {% block body %}
+<div class="employee-profile-main">
+  {% for detail, info in combined_data %}
+  <div class="d-flex align-items-center justify-content-between px-5">
+    <a href="/" style="color: white">
+      <i
+        class="fa fa-arrow-left fa-lg"
+        aria-hidden="true"
+        style="cursor: pointer"
+      ></i>
+    </a>
+    <h1 class="text-center py-3">{{detail.emp_name}}</h1>
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-toggle="modal"
+      data-target="#deleteModal"
+    >
+      Delete Employee
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="deleteModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Delete Employee
+            </h5>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete {{detail.emp_name}} ?
+          </div>
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <a href="/delete_employee/{{detail.emp_id}}">
+              <button type="button" class="btn btn-danger">
+                Yes, Delete Employee
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+  </div>
+  <div class="employee-details">
+    <div class="detail d-flex ps-5">
+      <h3>Employee ID:</h3>
+      <h3 style="font-weight: 300">{{detail.emp_id}}</h3>
+    </div>
+    <div class="detail d-flex ps-5">
+      <h3>Employee Designation:</h3>
+      <h3 style="font-weight: 300">{{detail.emp_desig}}</h3>
+    </div>
+    <div class="detail d-flex ps-5">
+      <h3>Employee City:</h3>
+      <h3 style="font-weight: 300">{{info.emp_city}}</h3>
+    </div>
+    <div class="detail d-flex ps-5">
+      <h3>Employee Email Id:</h3>
+      <h3 style="font-weight: 300">{{info.emp_email}}</h3>
+    </div>
+    <div class="detail d-flex ps-5">
+      <h3>Employee Contact Number:</h3>
+      <h3 style="font-weight: 300">{{info.emp_ph}}</h3>
+    </div>
+    <div class="detail d-flex ps-5">
+      <h3>Employee DOB:</h3>
+      <h3 style="font-weight: 300">{{info.emp_dob}}</h3>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

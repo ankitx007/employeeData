@@ -1,0 +1,14 @@
+.edit-main {
+    background-color: black;
+    color: white;
+    min-height: 100vh !important;
+}
+
+.edit-form {
+    width: 50%;
+}
+
+.edit-input {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+}

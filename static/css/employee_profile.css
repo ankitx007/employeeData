@@ -1,0 +1,13 @@
+.employee-profile-main {
+    background-color: black;
+    min-height: 100vh;
+    color: white;
+}
+
+.detail {
+    gap: 15px;
+}
+
+.modal-content {
+    background-color: #18191a !important;
+}

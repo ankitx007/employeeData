@@ -1,0 +1,99 @@
+{% extends "base.html" %} {% block body %}
+<div class="edit-main py-3">
+  <a href="/" style="color: white">
+    <i
+      class="fa fa-arrow-left fa-lg px-5"
+      aria-hidden="true"
+      style="cursor: pointer"
+    ></i>
+  </a>
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <form action="/addnew/{{emp_id}}" method="post" class="edit-form mt-1">
+      <div class="mb-3">
+        <label for="employeeName" class="form-label fw-bold"
+          >Employee Name</label
+        >
+        <input
+          type="text"
+          class="form-control edit-input"
+          id="employeeName"
+          aria-describedby="username"
+          name="employee_name"
+          required
+          value="{{detail.emp_name}}"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="employeeDesig" class="form-label fw-bold"
+          >Employee Designation</label
+        >
+        <input
+          type="text"
+          class="form-control edit-input"
+          id="employeeDesig"
+          aria-describedby="username"
+          name="employee_desig"
+          required
+          value="{{detail.emp_desig}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="employeeCity" class="form-label fw-bold"
+          >Employee City</label
+        >
+        <input
+          type="text"
+          class="form-control edit-input"
+          id="employeeCity"
+          aria-describedby="username"
+          name="employee_city"
+          required
+          value="{{info.emp_city}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="employeeEmail" class="form-label fw-bold"
+          >Employee Email</label
+        >
+        <input
+          type="text"
+          class="form-control edit-input"
+          id="employeeEmail"
+          aria-describedby="username"
+          name="employee_email"
+          required
+          value="{{info.emp_email}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="employeePhone" class="form-label fw-bold"
+          >Employee Phone No.</label
+        >
+        <input
+          type="text"
+          class="form-control edit-input"
+          id="employeePhone"
+          aria-describedby="username"
+          name="employee_phone"
+          required
+          value="{{info.emp_ph}}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="employeeDob" class="form-label fw-bold">Employee DOB</label>
+        <input
+          type="date"
+          class="form-control edit-input"
+          id="employeeDob"
+          aria-describedby="username"
+          name="employee_DOB"
+          required
+          value="{{info.emp_dob}}"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

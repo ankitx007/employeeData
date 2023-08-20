@@ -1,0 +1,23 @@
+.admin-dashboard {
+    background-color: black;
+    color: white;
+}
+
+.fa-plus {
+    color: white;
+}
+
+
+.action-button {
+    background-color: transparent;
+    padding: 6px 12px;
+    color: white;
+    font-weight: 500px;
+    border: 1px solid white;
+    margin: 5px;
+}
+
+.action-button:hover {
+    background-color: white;
+    color: black;
+}
